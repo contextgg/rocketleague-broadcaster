@@ -12,6 +12,8 @@ body {
 
 div#game-overlay {
   background-image: url('../images/overlay.png');
+  background-repeat: no-repeat;
+  background-position: top center;
   height: 100%;
   width: 100%;
 }
