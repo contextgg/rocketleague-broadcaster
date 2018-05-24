@@ -8,8 +8,16 @@ export default function() {
     res.render('index', { title: 'Express' });
   });
 
-  router.get('/game-overlay', function(req, res, next) {
-    res.render('game-overlay', { title: 'Game Overlay' });
+  router.get('/game', function(req, res, next) {
+    var game = 
+
+    var data = {
+      title: `Game ${game.teamA.name} vs ${game.teamB.name} `,
+      size: '2k',
+      game,
+    };
+
+    res.render('game', data);
   });
 
   return router;

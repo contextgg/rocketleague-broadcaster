@@ -7,6 +7,9 @@ import bodyParser from 'body-parser';
 import http from 'http';
 import routes from './routes';
 import debugWrapper from 'debug';
+import WebSocket from 'ws';
+import fs from 'fs';
+import fse from 'fs-extra';
 
 const debug = debugWrapper('express-app:server');
 
@@ -112,10 +115,46 @@ export default function() {
   app.set('port', port);
 
   server = http.createServer(app);
+
+  const wss = new WebSocket.Server({ server });
+  wss.on('connection', (ws: WebSocket) => {
+    ws.isAlive = true;
+    ws.on('pong', () => {
+      ws.isAlive = true;
+    });
+
+    //connection is up, let's add a simple simple event
+    ws.on('message', (message: string) => {
+      //log the received message and send it back to the client
+      console.log('received: %s', message);
+      ws.send(`Hello, you sent -> ${message}`);
+    });
+  });
+
+  setInterval(() => {
+    wss.clients.forEach((ws: WebSocket) => {
+      if (!ws.isAlive) return ws.terminate();
+
+      ws.isAlive = false;
+      ws.ping(() => {});
+    });
+  }, 10000);
+
+  var filePath = path.join(__dirname, '..', 'data', 'game.json');
+  fse.ensureFileSync(filePath);
+
+  fs.watch(filePath, function(event, filename) {
+    if(!filename) {
+      return
+    }
+
+    var file = fs.readFileSync(filePath);
+    console.log('File content at : ' + new Date() + ' is \n' + file);
+  });
+
   server.listen(port);
   server.on('error', onError);
   server.on('listening', onListening);
-
 
   console.log('Server running on port ' + port);
 }
