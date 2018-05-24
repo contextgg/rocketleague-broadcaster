@@ -9,7 +9,18 @@ export default function() {
   });
 
   router.get('/game', function(req, res, next) {
-    var game = 
+    var game = {
+      'bestOf': 7,
+      teamA: {
+        name: 'Nordic Gaming',
+        setScore: 2
+      },
+      teamB: {
+        name: 'Vapour eSports',
+        setScore: 1
+      }
+    };
+
 
     var data = {
       title: `Game ${game.teamA.name} vs ${game.teamB.name} `,
