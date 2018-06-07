@@ -1,0 +1,40 @@
+<div id="size-{{size}}">
+  {{#if demo}}
+  <div id="demo"></div>
+  {{/if}}
+  <div id="wrapper">
+    <div id="game">
+    </div>
+  </div>
+<div>
+
+<script id="game-template" type="text/x-handlebars-template">
+  <div class="best-of best-of-\{{bestOf}}">
+    <div id="teams">
+      <div id="team-a" class="team">
+        <div class="team-info">
+          <span class="score">{{teamA.setScore}}</span>
+          <strong class="name lines-\{{teamA.lines}}">\{{{teamA.name}}}</strong>
+          <div class="lights lights-\{{teamA.score}}-\{{bestOf}}">
+            <span class="light light-1"></span>
+            <span class="light light-2"></span>
+            <span class="light light-3"></span>
+            <span class="light light-4"></span>
+          </div>
+        </div>
+      </div>
+      <div id="team-b" class="team">
+        <div class="team-info">
+          <strong class="name lines-\{{teamB.lines}}">\{{{teamB.name}}}</strong>
+          <span class="score">{{teamB.setScore}}</span>
+          <div class="lights lights-\{{teamB.score}}-\{{bestOf}}">
+            <span class="light light-1"></span>
+            <span class="light light-2"></span>
+            <span class="light light-3"></span>
+            <span class="light light-4"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

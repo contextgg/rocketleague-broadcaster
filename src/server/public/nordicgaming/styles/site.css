@@ -1,0 +1,323 @@
+@font-face {
+  font-family: 'Viking';
+    src:  url('../fonts/Viking.ttf.woff') format('woff'),
+    url('../fonts/Viking.ttf.svg#Viking') format('svg'),
+    url('../fonts/Viking.ttf.eot'),
+    url('../fonts/Viking.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Viking';
+}
+
+.best-of-7 .light-1,
+.best-of-7 .light-2,
+.best-of-7 .light-3,
+.best-of-7 .light-4,
+.best-of-5 .light-1,
+.best-of-5 .light-2,
+.best-of-5 .light-3,
+.best-of-3 .light-1,
+.best-of-3 .light-2 {
+  display: block !important;
+}
+
+.lights-1-3 .light-1,
+.lights-2-3 .light-1,
+
+.lights-1-5 .light-1,
+.lights-2-5 .light-1,
+.lights-3-5 .light-1,
+
+.lights-1-7 .light-1,
+.lights-2-7 .light-1,
+.lights-3-7 .light-1,
+.lights-4-7 .light-1 {
+  background: #FEFEFA !important;
+}
+
+.lights-2-3 .light-2,
+
+.lights-2-5 .light-2,
+.lights-3-5 .light-2,
+
+.lights-2-7 .light-2,
+.lights-3-7 .light-2,
+.lights-4-7 .light-2  {
+  background: #FEFEFA !important;
+}
+
+.lights-3-5 .light-3,
+
+.lights-3-7 .light-3,
+.lights-4-7 .light-3  {
+  background: #FEFEFA !important;
+}
+
+.lights-4-7 .light-4  {
+  background: #FEFEFA !important;
+}
+
+#size-1080p #demo {
+  background-image: url('../images/example-1080p.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#size-1080p {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#size-1080p #wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+#size-1080p #game {
+  position: fixed;
+  left: 50%;
+}
+
+#size-1080p #game #teams {
+  position: relative;
+  left: -50%;
+
+  background-image: url('../images/overlay-1080p.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  width: 1200px;
+  height: 143px;
+}
+
+#size-1080p #game .team {
+  position: absolute;
+  top: 13px;
+  bottom: 50px;
+}
+
+#size-1080p #game .team-info {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+}
+
+#size-1080p #game .score {
+  display: none;
+}
+
+#size-1080p #game .name {
+  color: #FEFEFA;
+
+  line-height: 80px;
+  font-size: 28px;
+  padding: 0 20px;
+
+  display: block;
+  height: 67px;
+  overflow: hidden;
+}
+
+#size-1080p #game .name.lines-2 {
+  line-height: 32px;
+  padding-top: 4px;
+}
+
+#size-1080p #game .lights {
+  position: absolute;
+  bottom: 0;
+
+  height: 13px;
+  width: 100%;
+}
+
+#size-1080p #game .light {
+  display: none;
+  width: 65px;
+  height: 6px;
+  margin-top: 4px;
+  background: #130f30;
+  border-radius: 2px;
+}
+
+#size-1080p #game #team-a {
+  left: 0;
+  right: 50%;
+}
+
+#size-1080p #game #team-a .team-info {
+  right: 175px;
+  left: 0;
+
+  text-align: right;
+}
+
+#size-1080p #game #team-a .light {
+  float: right;
+  margin-right: 5%;
+}
+
+#size-1080p #game #team-b {
+  left: 50%;
+  right: 0;
+}
+
+#size-1080p #game #team-b .team-info {
+  right: 0;
+  left: 176px;
+
+  text-align: left;
+}
+
+#size-1080p #game #team-b .light {
+  float: left;
+  margin-left: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#size-1440p {
+  width: 100%;
+  position: absolute;
+  overflow:hidden;
+}
+
+#size-1440p #game {
+  position:fixed;
+  left: 50%;
+}
+
+#size-1440p #game #teams {
+  position: relative;
+  left: -50%;
+
+  background-image: url('../images/game-overlay-2k.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  width: 1300px;
+  height: 160px;
+}
+
+#size-1440p #game .team {
+  position: absolute;
+  top: 8px;
+  bottom: 45px;
+}
+
+#size-1440p #game .team-info {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+}
+
+#size-1440p #game .score {
+  display: none;
+}
+
+#size-1440p #game .name {
+  color: #FEFEFA;
+
+  line-height: 48px;
+  font-size: 28px;
+  padding: 0 20px;
+}
+
+#size-1440p #game .lights {
+  position: absolute;
+  bottom: 0;
+
+  height: 10px;
+  width: 100%;
+}
+
+#size-1440p #game .light {
+  display: none;
+  width: 50px;
+  height: 4px;
+  margin-top: 3px;
+  background: #130f30;
+  border-radius: 2px;
+}
+
+#size-1440p #game #team-a {
+  left: 0;
+  right: 50%;
+}
+
+#size-1440p #game #team-a .team-info {
+  right: 120px;
+  left: 70px;
+
+  text-align: right;
+}
+
+#size-1440p #game #team-a .lights {
+  right: 5px;
+  left: 5px;
+}
+
+#size-1440p #game #team-a .light {
+  float: right;
+  margin-right: 4%;
+}
+
+#size-1440p #game #team-b {
+  left: 50%;
+  right: 0;
+}
+
+#size-1440p #game #team-b .team-info {
+  right: 70px;
+  left: 120px;
+
+  text-align: left;
+}
+
+#size-1440p #game #team-b .lights {
+  left: 5px;
+  right: 5px;
+}
+
+#size-1440p #game #team-b .light {
+  float: left;
+  margin-left: 4%;
+}

@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/styles/site.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<head>
+  <title>Rocket League Broadcaster</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css' />
+  <link rel='stylesheet' href='/default/styles/site.css' />
+  {{#if org}}
+  <link rel='stylesheet' href='/{{name}}/styles/site.css' />
+  {{/if}}
+</head>
+<body>
+  {{{body}}}
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  {{#each scripts}}
+    <script src="{{this}}"></script>
+  {{/each}}
+</body>
 </html>

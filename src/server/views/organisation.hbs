@@ -1,0 +1,11 @@
+<div class="ui text container">
+  <h1 class="ui dividing header">{{ org.title }}</h1>
+  <h3 class="ui dividing header">Different Sizes</h3>
+  <div class="ui list">
+    {{#each org.sizes}}
+      <div class="item">
+        <a href="/{{../name}}/{{this}}">{{inc @index}}. {{this}}</a>
+      </div>
+    {{/each}}
+  </div>
+</div>
