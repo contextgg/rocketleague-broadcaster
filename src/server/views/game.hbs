@@ -13,9 +13,9 @@
     <div id="teams">
       <div id="team-a" class="team">
         <div class="team-info">
-          <span class="score">\{{teamA.setScore}}</span>
-          <strong class="name">\{{teamA.name}}</strong>
-          <div class="lights lights-\{{teamA.setScore}}-{{bestOf}}">
+          <span class="score">{{teamA.setScore}}</span>
+          <strong class="name lines-\{{teamA.lines}}">\{{{teamA.name}}}</strong>
+          <div class="lights lights-\{{teamA.score}}-\{{bestOf}}">
             <span class="light light-1"></span>
             <span class="light light-2"></span>
             <span class="light light-3"></span>
@@ -25,9 +25,9 @@
       </div>
       <div id="team-b" class="team">
         <div class="team-info">
-          <strong class="name">\{{teamB.name}}</strong>
-          <span class="score">\{{teamB.setScore}}</span>
-          <div class="lights lights-\{{teamB.setScore}}-{{bestOf}}">
+          <strong class="name lines-\{{teamB.lines}}">\{{{teamB.name}}}</strong>
+          <span class="score">{{teamB.setScore}}</span>
+          <div class="lights lights-\{{teamB.score}}-\{{bestOf}}">
             <span class="light light-1"></span>
             <span class="light light-2"></span>
             <span class="light light-3"></span>
