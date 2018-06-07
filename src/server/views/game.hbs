@@ -1,11 +1,21 @@
-<div id="game" class="bo{{game.bestOf}}">
-  <div>
+<div id="size-{{size}}">
+  {{#if demo}}
+  <div id="demo"></div>
+  {{/if}}
+  <div id="wrapper">
+    <div id="game">
+    </div>
+  </div>
+<div>
+
+<script id="game-template" type="text/x-handlebars-template">
+  <div class="best-of best-of-\{{bestOf}}">
     <div id="teams">
       <div id="team-a" class="team">
         <div class="team-info">
-          <span class="score">{{game.teamA.setScore}}</span>
-          <strong class="name">{{game.teamA.name}}</strong>
-          <div class="lights lights-{{game.teamA.setScore}}-{{game.bestOf}}">
+          <span class="score">\{{teamA.setScore}}</span>
+          <strong class="name">\{{teamA.name}}</strong>
+          <div class="lights lights-\{{teamA.setScore}}-{{bestOf}}">
             <span class="light light-1"></span>
             <span class="light light-2"></span>
             <span class="light light-3"></span>
@@ -15,9 +25,9 @@
       </div>
       <div id="team-b" class="team">
         <div class="team-info">
-          <strong class="name">{{game.teamB.name}}</strong>
-          <span class="score">{{game.teamB.setScore}}</span>
-          <div class="lights lights-{{game.teamB.setScore}}-{{game.bestOf}}">
+          <strong class="name">\{{teamB.name}}</strong>
+          <span class="score">\{{teamB.setScore}}</span>
+          <div class="lights lights-\{{teamB.setScore}}-{{bestOf}}">
             <span class="light light-1"></span>
             <span class="light light-2"></span>
             <span class="light light-3"></span>
@@ -27,43 +37,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<script src="https://cdnjs.com/libraries/handlebars.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script id="game-template" type="text/x-handlebars-template">
-
-</script>
-<script>
-  $(document).ready(function() {
-    if(!("WebSocket" in window)){
-      console.log("No support for websockets");
-      return;
-    }
-    // var source = document.getElementById("entry-template").innerHTML;
-
-    var socket;
-    var host = "ws://" + location.host;
-
-    try {
-      socket = new WebSocket(host);
-      socket.onopen = function() {
-        // Send the message 'Ping' to the server
-        console.log('WebSocket open')
-      };
-
-      socket.onerror = function (error) {
-        // Log errors
-        console.log('WebSocket Error ' + error);
-      };
-
-      // Log messages from the server
-      socket.onmessage = function (e) {
-        // todo update the template.
-        console.log(e);
-      };
-    } catch(exception){
-      console.log('WebSocket Error ' + exception);
-    }
-  });
 </script>

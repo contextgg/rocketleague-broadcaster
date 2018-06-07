@@ -1,31 +1,71 @@
 import express from 'express';
 
-export default function() {
-  var router = express.Router();
+const all = {
+  nordicgaming: {
+    title: 'Nordic Gaming Australia',
+    sizes: ['1080p', '1440p'],
+  },
+};
+
+const routes = () => {
+  const router = express.Router();
 
   /* GET home page. */
-  router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-  });
-
-  router.get('/game', function(req, res, next) {
-    var game = {
-      'bestOf': 7,
-      teamA: {
-        name: 'Nordic Gaming',
-        setScore: 2
-      },
-      teamB: {
-        name: 'Vapour eSports',
-        setScore: 1
-      }
+  router.get('/', (req, res) => {
+    const data = {
+      orgs: all,
     };
 
+    res.render('index', data);
+  });
 
-    var data = {
-      title: `Game ${game.teamA.name} vs ${game.teamB.name} `,
-      size: '2k',
-      game,
+  /* GET org landing page. */
+  router.get('/:org', (req, res) => {
+    const name = req.params.org;
+    const org = all[name];
+    if (!org) {
+      throw new Error('Organisation not found');
+    }
+
+    const data = {
+      name,
+      org,
+    };
+
+    res.render('organisation', data);
+  });
+
+  /* GET org overlays. */
+  router.get('/:org/:size', (req, res) => {
+    const name = req.params.org;
+    const org = all[name];
+    if (!org) {
+      throw new Error('Organisation not found');
+    }
+
+    const data = {
+      size: req.params.size,
+      name,
+      org,
+    };
+
+    res.render('overlays', data);
+  });
+
+  /* GET game overlay */
+  router.get('/:org/:size/game', (req, res) => {
+    const name = req.params.org;
+    const org = all[name];
+    if (!org) {
+      throw new Error('Organisation not found');
+    }
+
+    const data = {
+      demo: req.query.demo,
+      size: req.params.size,
+      name,
+      org,
+      scripts: ['/default/scripts/game.js'],
     };
 
     res.render('game', data);
@@ -33,3 +73,5 @@ export default function() {
 
   return router;
 };
+
+export default routes;

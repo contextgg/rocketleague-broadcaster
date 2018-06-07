@@ -1,11 +1,11 @@
 {
-  'bestOf': 7,
-  teamA: {
-    name: 'Nordic Gaming',
-    setScore: 2
+  "bestOf": 7,
+  "teamA": {
+    "name": "Nordic Gamings",
+    "setScore": 2
   },
-  teamB: {
-    name: 'Vapour eSports',
-    setScore: 1
+  "teamB": {
+    "name": "Vapour eSports",
+    "setScore": 2
   }
 }

@@ -1,2 +1,10 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="ui text container">
+<h1 class="ui dividing header">Rocket league broadcaster</h1>
+<div class="ui list">
+  {{#each orgs}}
+    <div class="item">
+      <a href="/{{@key}}">{{inc @index}}. {{this.title}}</a>
+    </div>
+  {{/each}}
+</div>
+</div>
