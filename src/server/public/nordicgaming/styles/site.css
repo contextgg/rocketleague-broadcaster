@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
 @font-face {
   font-family: 'Viking';
     src:  url('../fonts/Viking.ttf.woff') format('woff'),
@@ -8,8 +10,9 @@
     font-style: normal;
 }
 
-body {
-  font-family: 'Viking';
+strong {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 .best-of-7 .light-1,
@@ -121,7 +124,7 @@ body {
 #size-1080p #game .name {
   color: #FEFEFA;
 
-  line-height: 80px;
+  line-height: 67px;
   font-size: 28px;
   padding: 0 20px;
 
@@ -131,7 +134,7 @@ body {
 }
 
 #size-1080p #game .name.lines-2 {
-  line-height: 32px;
+  line-height: 28px;
   padding-top: 4px;
 }
 
